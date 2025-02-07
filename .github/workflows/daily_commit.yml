@@ -1,0 +1,23 @@
+name: Daily Commit
+
+on:
+  schedule:
+    - cron: '30 23 * * *'  # Runs daily at 11:30 PM UTC (Adjust as needed)
+
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  daily-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Fetches the repository code
+
+      - name: Make a daily commit (23f2004169@ds.study.iitm.ac.in)
+        run: |
+          echo "Daily commit on $(date)" >> daily_log.txt
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "23f2004169@ds.study.iitm.ac.in"
+          git add .
+          git commit -m "Automated daily commit - $(date)"
+          git push
