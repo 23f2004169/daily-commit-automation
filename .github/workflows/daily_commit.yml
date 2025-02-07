@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Git credentials (23f2004169@ds.study.iitm.ac.in)
+      - name: 23f2004169@ds.study.iitm.ac.in
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "23f2004169@ds.study.iitm.ac.in"
