@@ -13,9 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false  # Prevents authentication issues
+          persist-credentials: false
 
-      - name: Configure Git Credentials
+      - name: Configure Git Credentials - 23f2004169@ds.study.iitm.ac.in  
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "23f2004169@ds.study.iitm.ac.in"
